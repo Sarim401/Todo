@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.scss';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Todo from './components/Todo';
 import About from './components/About'; // Nowy komponent
