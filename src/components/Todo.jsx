@@ -12,9 +12,11 @@ const Todo = () => {
   const dispatch = useDispatch();
   const [newTodoText, setNewTodoText] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [task, setTask] = useState();
 
   const handleAddTodo = (text) => {
     dispatch(addTodo(text));
+    axios.post('http://localhost:3001/add', {task:task}).then(result => console.log(result))
   };
 
   const handleAddTodoClick = () => {
@@ -31,7 +33,7 @@ const Todo = () => {
 
   return (
     <div className="max-w-4xl mx-auto sm:mt-8 p-4 bg-gray-100 rounded">
-      <h2 className='mt-3 mb-6 text-2xl font-bold text-center uppercase'>Personal TODO APP</h2>
+      <h2 className='mt-3 mb-6 text-2xl font-bold text-center uppercase'>TODO APP</h2>
       <div className="flex items-center mb-4">
         <input
           id="addTodoInput"
